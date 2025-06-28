@@ -7,6 +7,8 @@ import Cotagories from "./Pages/Cotagories";
 import Offers from "./Pages/Offers";
 import Contact from "./Pages/Contact";
 import Login from "./Pages/Login";
+import Register from "./Pages/Register";
+import Cart from "./Pages/Cart";
 
 const App = () => {
   return (
@@ -14,11 +16,13 @@ const App = () => {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage />}></Route>
+          <Route path="/" element={<Login />}></Route>
+          <Route path="/register" element={<Register />}></Route>
+          <Route path="/home" element={<HomePage />}></Route>
+          <Route path="/cart" element={<Cart />}></Route>
           <Route path="/cotagories" element={<Cotagories />}></Route>
           <Route path="/offers" element={<Offers />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/login" element={<Login />}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>

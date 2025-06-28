@@ -11,7 +11,7 @@ const Navbar = () => {
       <nav className="bg-white shadow-md px-4 py-3 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
-          <NavLink to="/" className="text-2xl font-bold">
+          <NavLink to="/home" className="text-2xl font-bold">
             ZestBasket
           </NavLink>
 
@@ -32,7 +32,7 @@ const Navbar = () => {
             } lg:flex lg:items-center lg:gap-4 absolute lg:static top-[65px] left-0 w-full lg:w-auto bg-white lg:bg-transparent p-4 lg:p-0 shadow-md lg:shadow-none z-40`}
           >
             <NavLink
-              to="/"
+              to="/home"
               className="block py-2 px-4 hover:text-neutral-600  font-semibold"
             >
               Home
@@ -66,7 +66,7 @@ const Navbar = () => {
                 Cart(3)
               </Link>
               <Link
-                to="/login"
+                to="/"
                 className="font-semibold border px-5 py-2 rounded-md bg-orange-500 text-white border-orange-500 hover:bg-white hover:text-orange-500 transition-all duration-300 ease-in-out"
               >
                 Login

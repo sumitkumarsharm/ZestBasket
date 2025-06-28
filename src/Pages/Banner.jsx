@@ -1,11 +1,12 @@
 import React from "react";
+import MainBanner from "../assets/MainBanner.jpg";
 
 const Banner = () => {
   return (
     <div className="w-full my-6 px-4">
       <div className="relative rounded-xl overflow-hidden shadow-lg">
         <img
-          src="https://source.unsplash.com/1600x600/?grocery,vegetable" // replace with your actual image
+          src={MainBanner}
           alt="Banner Image"
           className="w-full h-[200px] sm:h-[250px] md:h-[350px] lg:h-[450px] object-cover"
         />
