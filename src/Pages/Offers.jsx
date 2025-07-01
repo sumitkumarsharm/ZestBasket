@@ -1,17 +1,8 @@
-import React from "react";
-
-const offers = [
-  { name: "Vegetables", coupon: "VEGI30" },
-  { name: "Fruits", coupon: "FRUIT25" },
-  { name: "Snacks", coupon: "SNACK20" },
-  { name: "Dairy Products", coupon: "DAIRY10" },
-  { name: "Home Essentials", coupon: "HOME15" },
-  { name: "Cleaning Items", coupon: "CLEAN5" },
-  { name: "Beauty & Hygiene", coupon: "BEAUTY12" },
-  { name: "Beverages", coupon: "DRINK50" },
-];
+import React, { useState } from "react";
+import { AOneStoreData } from "../assets/Products";
 
 const Offers = () => {
+  const [offers, setOffers] = useState(AOneStoreData.offers);
   return (
     <div className="w-full py-8 px-4 max-w-7xl mx-auto">
       <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">

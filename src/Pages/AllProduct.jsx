@@ -1,8 +1,9 @@
-import React from "react";
-import { products } from "./DummeyData";
+import React, { useState } from "react";
+import { AOneStoreData } from "../assets/Products.js";
 import BestSeller from "./BestSeller.jsx";
 
 const AllProduct = () => {
+  const [Grocery, setGrocery] = useState(AOneStoreData.Grocery);
   return (
     <>
       <div className="px-3 mb-10">
@@ -53,7 +54,7 @@ const AllProduct = () => {
           <div className="overflow-x-auto" style={{ scrollbarWidth: "none" }}>
             <ul className="flex space-x-4 min-w-max p-2">
               {/* Product Card */}
-              {products.map(
+              {Grocery.map(
                 ({
                   brand,
                   discount,

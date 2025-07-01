@@ -1,7 +1,8 @@
-import React from "react";
-import { products } from "./BestSeller";
+import React, { useState } from "react";
+import { AOneStoreData } from "../assets/Products.js";
 
 const BestSeller = () => {
+  const [BestSellers, setBestSellers] = useState(AOneStoreData.BestSeller);
   return (
     <div>
       <div className="w-full p-2 bg-gray-100  max-w-7xl mx-auto rounded-md">
@@ -51,7 +52,7 @@ const BestSeller = () => {
         <div className="overflow-x-auto" style={{ scrollbarWidth: "none" }}>
           <ul className="flex space-x-4 min-w-max p-2">
             {/* Product Card */}
-            {products.map(
+            {BestSellers.map(
               ({
                 brand,
                 discount,
