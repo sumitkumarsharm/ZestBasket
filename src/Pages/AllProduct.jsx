@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { AOneStoreData } from "../assets/Products.js";
 import BestSeller from "./BestSeller.jsx";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Feature/CartSlice.js";
 
 const AllProduct = () => {
   const [Grocery, setGrocery] = useState(AOneStoreData.Grocery);
+  const dispatch = useDispatch();
   return (
     <>
       <div className="px-3 mb-10">
@@ -63,7 +66,11 @@ const AllProduct = () => {
                     </div>
 
                     {/* Image */}
-                    <a href={Data.url} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={Data.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <img
                         src={Data.image}
                         alt="Capsicum Green/Shimla Mirch"
@@ -137,7 +144,10 @@ const AllProduct = () => {
 
                     {/* Add Button */}
                     <div className="mt-3">
-                      <button className="w-full border border-red-500 text-red-600 font-semibold py-1 rounded hover:bg-red-300">
+                      <button
+                        className="w-full border border-red-500 text-red-600 font-semibold py-1 rounded hover:bg-red-300"
+                        onClick={() => dispatch(addToCart(Data))}
+                      >
                         Add
                       </button>
                     </div>

@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { AOneStoreData } from "../assets/Products.js";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Feature/CartSlice.js";
 
 const BestSeller = () => {
   const [BestSellers, setBestSellers] = useState(AOneStoreData.BestSeller);
+  const dispatch = useDispatch();
   return (
     <div>
       <div className="w-full p-2 bg-gray-100  max-w-7xl mx-auto rounded-md">
@@ -135,7 +138,10 @@ const BestSeller = () => {
 
                   {/* Add Button */}
                   <div className="mt-3">
-                    <button className="w-full border border-red-500 text-red-600 font-semibold py-1 rounded hover:bg-red-300">
+                    <button
+                      className="w-full border border-red-500 text-red-600 font-semibold py-1 rounded hover:bg-red-300"
+                      onClick={() => dispatch(addToCart(Data))}
+                    >
                       Add
                     </button>
                   </div>

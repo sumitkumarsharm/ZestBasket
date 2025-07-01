@@ -2,7 +2,11 @@ import React from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import { GrSubtract } from "react-icons/gr";
 import ProductImage from "../assets/ProductImage.webp";
+import { useSelector } from "react-redux";
 const Cart = () => {
+  const cartItems = useSelector((state) => state.cartValue.cartItem);
+  console.log(cartItems);
+
   return (
     <div className="max-w-7xl mx-auto px-4">
       <h1 className="text-2xl font-bold my-4">Your Cart</h1>
@@ -33,20 +37,21 @@ const Cart = () => {
       </div>
 
       {/* Cart Items */}
-      {[1, 2, 3].map((_, i) => (
+      {cartItems.map((data) => (
         <div
-          key={i}
+          key={data.id}
           className="w-full flex flex-col sm:flex-row justify-between items-center gap-4 border border-neutral-300 rounded-md p-4 mb-4"
         >
           <div className="flex gap-3 items-center w-full sm:w-1/2">
             <img
-              src={ProductImage}
+              src={data.image}
               alt="item"
               className="w-16 h-16 object-cover"
             />
             <p className="font-semibold">
-              Chicken Nuggets <br />
-              <span className="text-sm text-neutral-500">₹415</span>
+              {data.name}
+              <br />
+              <span className="text-sm text-neutral-500">₹{data.price}</span>
             </p>
           </div>
 
@@ -60,7 +65,7 @@ const Cart = () => {
                 <AiOutlinePlus />
               </button>
             </div>
-            <h3 className="text-xl font-bold">₹415</h3>
+            <h3 className="text-xl font-bold">₹{data.price}</h3>
           </div>
         </div>
       ))}
