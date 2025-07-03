@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
 import { BsCart3 } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const cartItems = useSelector((state) => state.cartValue.cartItem);
 
   return (
     <header>
@@ -63,7 +65,7 @@ const Navbar = () => {
                 className="relative flex items-center gap-1 text-neutral-800  font-semibold hover:text-neutral-600 "
               >
                 <BsCart3 />
-                Cart(3)
+                Cart({cartItems.length})
               </Link>
               <Link
                 to="/"
