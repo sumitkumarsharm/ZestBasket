@@ -17,7 +17,6 @@ const Navbar = () => {
             ZestBasket
           </NavLink>
 
-        
           <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
