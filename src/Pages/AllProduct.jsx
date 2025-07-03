@@ -103,7 +103,7 @@ const AllProduct = () => {
                     {/* Weight Selector */}
                     <div className="mt-2">
                       <button className="w-full border border-gray-300 rounded px-3 py-1 text-sm font-medium flex justify-between items-center text-gray-800">
-                        {Data.quantity}
+                        {Data.quantity} {Data.unite}
                         {/* isko remove krna hai iski jagh ham import kr lenege reacticon se */}
                         <svg
                           width="16"
