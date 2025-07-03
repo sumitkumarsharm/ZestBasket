@@ -17,7 +17,7 @@ const Navbar = () => {
             ZestBasket
           </NavLink>
 
-          {/* Hamburger Button fore Mobile */}
+        
           <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -27,7 +27,6 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Navigation Links */}
           <div
             className={`${
               isMenuOpen ? "block" : "hidden"
@@ -58,7 +57,6 @@ const Navbar = () => {
               Contact
             </NavLink>
 
-            {/* Buttons Mobile view stacked, Desktop aligned right */}
             <div className="flex flex-col lg:flex-row items-start lg:items-center gap-3 mt-4 lg:mt-0 lg:ml-8">
               <Link
                 to="/cart"

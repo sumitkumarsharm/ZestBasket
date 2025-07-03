@@ -71,7 +71,7 @@ const Footer = () => {
 
         {/* Divider & Bottom */}
         <div className="border-t border-dashed border-gray-600 mt-8 pt-4 text-sm text-gray-400 text-center">
-          © {new Date().getFullYear()} AOneStore. All rights reserved.
+          © {new Date().getFullYear()} ZestBasket. All rights reserved.
         </div>
       </div>
     </div>
