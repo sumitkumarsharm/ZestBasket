@@ -3,10 +3,16 @@ import { AOneStoreData } from "../assets/Products.js";
 import BestSeller from "./BestSeller.jsx";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../Feature/CartSlice.js";
+import { toast } from "react-toastify";
 
 const AllProduct = () => {
   const [Grocery, setGrocery] = useState(AOneStoreData.Grocery);
   const dispatch = useDispatch();
+
+  const HandleAddToCart = (item) => {
+    dispatch(addToCart(item));
+    toast.success("Item added to cart");
+  };
   return (
     <>
       <div className="px-3 mb-10">
@@ -146,7 +152,7 @@ const AllProduct = () => {
                     <div className="mt-3">
                       <button
                         className="w-full border border-red-500 text-red-600 font-semibold py-1 rounded hover:bg-red-300"
-                        onClick={() => dispatch(addToCart(Data))}
+                        onClick={() => HandleAddToCart(Data)}
                       >
                         Add
                       </button>

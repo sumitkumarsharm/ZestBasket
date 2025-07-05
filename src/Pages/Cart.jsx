@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { DeleteItem } from "../Feature/CartSlice";
+import { toast } from "react-toastify";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -19,6 +20,11 @@ const Cart = () => {
       0
     )
     .toFixed(2);
+
+  const HandleItemDelete = (id) => {
+    dispatch(DeleteItem(id));
+    toast.error("Item removed from cart");
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-4">
@@ -98,7 +104,7 @@ const Cart = () => {
               </div>
               <button
                 className="text-red-500  mt-1 border border-red-500 px-2 rounded-2xl hover:bg-red-600 hover:text-white cursor-pointer active:bg-red-500 active:text-white"
-                onClick={() => dispatch(DeleteItem(item.id))}
+                onClick={() => HandleItemDelete(item.id)}
               >
                 Delete
               </button>
