@@ -1,8 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { DeleteItem } from "../Feature/CartSlice";
 
 const Cart = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const cartItems = useSelector((state) => state.cartValue.cartItem);
 
@@ -90,8 +92,16 @@ const Cart = () => {
             </div>
 
             <div className="w-full sm:w-1/4 text-left sm:text-center font-bold text-green-700">
-              <span className="sm:hidden text-neutral-500">Total: </span>₹
-              {(item.price * item.quantity).toFixed(2)}
+              <div>
+                <span className="sm:hidden text-neutral-500">Total: </span>₹
+                {(item.price * item.quantity).toFixed(2)}
+              </div>
+              <button
+                className="text-red-500  mt-1 border border-red-500 px-2 rounded-2xl hover:bg-red-600 hover:text-white cursor-pointer active:bg-red-500 active:text-white"
+                onClick={() => dispatch(DeleteItem(item.id))}
+              >
+                Delete
+              </button>
             </div>
           </div>
         ))
