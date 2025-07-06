@@ -20,7 +20,7 @@ const BestSeller = () => {
           <div className="flex items-center gap-2">
             <a
               href="/member/smart-basket/?nc=smart_basket"
-              className="text-sm text-green-600 hover:underline font-medium"
+              className="text-sm text-green-600 hover:underline f ont-medium"
             >
               View All
             </a>

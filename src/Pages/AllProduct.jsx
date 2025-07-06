@@ -58,7 +58,6 @@ const AllProduct = () => {
               </button>
             </div>
           </div>
-
           {/* Product List section*/}
           <div className="overflow-x-auto" style={{ scrollbarWidth: "none" }}>
             <ul className="flex space-x-4 min-w-max p-2">
